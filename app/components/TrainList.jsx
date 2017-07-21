@@ -13,7 +13,6 @@ var TrainList = React.createClass({
 				trainList.length > 0) {
 				return (
 					<div>
-						<p>hi</p>
 						{trainList.map(function(train, i){
 							return <TrainDetail key={i} trainInfo={train}/>
 						})}

@@ -8,9 +8,11 @@ var Examples = require('Examples');
 var Nav = require('Nav');
 
 // load Foundation
-
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
+
+// load css
+require('style!css!appStyles')
 
 ReactDOM.render(
 	<Router history={hashHistory}>

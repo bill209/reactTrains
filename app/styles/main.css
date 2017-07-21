@@ -1,6 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* You can add global styles to this file, and also import other style files */
+
+.avatar-container {
+	display: block;
+	margin-bottom: 7px;
+}
+
+.ava2 {
+	display: block;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	background: #fff;
+}
+
+.top-bar {
+	margin-bottom: 20px;
+	background-color: #aaaaaa;
+}
+
+.top-bar .menu {
+	background-color: #aaaaaa;
+}
+
+.trainDetail.callout.primary {
+	height: 72px;
+	background-color: #fff;
+	padding: 16px 16px;
+	margin: 0;
+	cursor: pointer;
+
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #dddddd;
+}
+.trainDetail .media-object-section h4 {
+	font-size: 16px;
+	margin: 0;
+}
+
+.trainDetail .media-object-section p {
+	font-size: 10px;
+	color: #888;
+	line-height: 12px;
+}
+
+.trainDetail .media-object-section span {
+}
 
 
 body {
@@ -83,6 +132,7 @@ app-train-header {
 	background-color: #aaa;
 	color: #333;
 }
+
 
 app-train-header h3 {
 	margin: 0;
