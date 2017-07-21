@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+	margin: 0;
+	font-family: Roboto, sans-serif;
+}
+
+app-train-list md-list.mat-list {
+	padding-top: 0;
+}
+
+app-data-choice {
+	float: right;
+}
+
+app-data-choice  {
+	width: 100px;
+	margin-top: -10px;
+}
+
+app-data-choice .mat-radio-container {
+	top: 5px;
+}
+
+#content {
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+}
+
+#content > div {
+	background-color: #eee;
+	float: left;
+	margin-right: 20px;
+	display: inline-block;
+	width: 40%;
+	height: 100%;
+	padding: 20px;
+	border: solid 1px #ddd;
+}
+
+#content > div > div{
+	height: 500px;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px; /* future proofing */
+	-khtml-border-radius: 4px;
+
+}
+
+
+md-card {
+	max-width: 80%;
+	margin: 2em auto;
+	text-align: center;
+}
+
+md-toolbar-row {
+	justify-content: space-between;
+}
+
+.done {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: white;
+}
+
+app-train-header {
+	display: block;
+	margin: 0;
+	padding: 20px;
+	width: auto;
+	height: 35px;
+	background-color: #aaa;
+	color: #333;
+}
+
+app-train-header h3 {
+	margin: 0;
+}
+
+app-train-header span {
+	font-style: italic;
+	font-size: 12px;
+}
+
+app-train-detail img {
+	max-height:100%;
+	max-width:100%;
+}
+
+app-train-item md-list-item {
+	cursor: pointer;
+	border: solid 1px #ddd;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px; /* future proofing */
+	-khtml-border-radius: 4px;
+	background-color: #fff;
+}
+
+app-train-item md-list-item:hover {
+	background-color: #f0f0f0;
+}
+
+app-train-item md-list-item p span {
+	font-size: 10px;
+	color: #888;
+}
