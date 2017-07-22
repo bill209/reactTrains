@@ -1,40 +1,20 @@
 var React = require('react');
 var TrainList = require('TrainList');
 var TrainPic = require('TrainPic');
-var WeatherForm = require('WeatherForm');
-var WeatherMsg = require('WeatherMsg');
 var trainsSvc = require('trainsSvc');
 var ErrorModal = require('ErrorModal');
 
 var Trains = React.createClass({
+	componentDidMount: function () {
+		this.getTrainList();
+	},
 	getInitialState: function () {
 		return {
 			trainList: {},
+			chosenTrain: null,
 			isLoading: false,
 			trainError: false
 		}
-	},
-	handleSearch: function (loc) {
-		var that = this;
-		this.setState({
-			isLoading: true,
-			wxError: false,
-			errorMsg: undefined
-		});
-
-		openWxMap.getTemp(loc).then(function (temp) {
-			that.setState({
-				location: loc,
-				temp: temp,
-				isLoading: false
-			})
-		}, function (e) {
-			that.setState({
-				isLoading: false,
-				wxError: true,
-				errorMsg: e.message
-			});
-		})
 	},
 	onFormSubmit: function (e) {
 		e.preventDefault();
@@ -63,9 +43,15 @@ var Trains = React.createClass({
 		})
 	},
 
+	handleClick: function (idx) {
+		this.setState({
+			chosenTrain: idx
+		})
+	},
 
 	render: function () {
-		var {isLoading, trainList, trainError, errorMsg} = this.state;
+		var that = this;
+		var {isLoading, trainList, chosenTrain, trainError, errorMsg} = this.state;
 
 		function renderMessage() {
 			if (isLoading) {
@@ -81,9 +67,11 @@ var Trains = React.createClass({
 			}
 		}
 
-		function RenderTrainList(props) {
-			if (typeof props.trainList.trains !== 'undefined') {
-				return <TrainList trainList={props.trainList.trains}/>
+		function RenderTrainList() {
+
+			if (typeof trainList.trains !== 'undefined') {
+				return <TrainList onTrainClick={that.handleClick}
+													trainList={trainList.trains}/>
 			} else {
 				return <p>no trains yet...</p>
 			}
@@ -95,14 +83,14 @@ var Trains = React.createClass({
 				<div className="small-6 columns">
 					<div className="callout secondary large">
 
-						<RenderTrainList trainList={trainList}/>
+						<RenderTrainList />
 						{renderMessage()}
 						{renderError()}
 
-						</div>
+					</div>
 				</div>
 				<div className="small-6 columns">
-					<TrainPic />
+					<TrainPic trainList={trainList} trainIdx={chosenTrain}/>
 				</div>
 				<form onSubmit={this.onFormSubmit}>
 					<button className="button hollow expanded">Get Trains</button>

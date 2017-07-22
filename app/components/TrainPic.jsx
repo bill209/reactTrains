@@ -1,13 +1,30 @@
 var React = require('react');
 
-var TrainPic = () => {
-	return (
-		<div className="callout secondary large">
-			<h5>Train Pic</h5>
-			<p>It has an easy to override visual style, and is appropriately subdued.</p>
-			<a href="#">It's dangerous to go alone, take this.</a>
-		</div>
-	);
-};
+var TrainPic = React.createClass({
+	render: function () {
+		var {trainIdx, trainList} = this.props;
+
+		function RenderTrainDetail() {
+			if (trainIdx !== null) {
+				return (
+					<div className="callout secondary large">
+						<img src={"/trains/" + trainList.trains[trainIdx].img}
+								 alt="Default"
+								 title=""
+								 className="" />
+					</div>
+				)
+			} else {
+				return <p>please click on a train</p>
+			}
+		}
+
+		return (
+			<div>
+				{RenderTrainDetail()}
+			</div>
+		)
+	}
+});
 
 module.exports = TrainPic;

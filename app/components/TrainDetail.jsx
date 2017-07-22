@@ -1,8 +1,14 @@
 var React = require('react');
 
-var TrainDetail = ({trainInfo}) => {
+var TrainDetail = React.createClass({
+	test: function(){
+		console.log("x");
+
+	},
+	render: function(props) {
+		var {trainInfo} = this.props;
 		return (
-			<div className="trainDetail callout primary">
+			<div className="trainDetail callout primary" >
 				<div className="media-object">
 					<div className="media-object-section">
 						<div className="avatar-container">
@@ -23,6 +29,7 @@ var TrainDetail = ({trainInfo}) => {
 				</div>
 			</div>
 		);
-	};
+	}
+});
 
 module.exports = TrainDetail;
