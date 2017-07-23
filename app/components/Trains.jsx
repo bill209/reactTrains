@@ -94,9 +94,6 @@ var Trains = React.createClass({
 				<div className="cell">
 					<TrainPic trainList={trainList} trainIdx={chosenTrain}/>
 				</div>
-				<form onSubmit={this.onFormSubmit}>
-					<button className="button hollow expanded">Get Trains</button>
-				</form>
 			</div>
 		)
 	}

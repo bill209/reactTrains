@@ -1,10 +1,6 @@
 var React = require('react');
 
 var TrainDetail = React.createClass({
-	test: function(){
-		console.log("x");
-
-	},
 	render: function(props) {
 		var {trainInfo} = this.props;
 		return (

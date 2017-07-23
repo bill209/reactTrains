@@ -11,7 +11,6 @@ var About = React.createClass({
 		}
 	},
 	componentDidMount: function () {
-		console.log('mounted');
 		this.getTools();
 	},
 	getTools: function(){
