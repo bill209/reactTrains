@@ -24,10 +24,10 @@ var Nav = React.createClass({
 				<div className="top-bar-right">
 					<ul className="menu">
 						<li>
-							<IndexLink to="/" activeClassName="active" activeStyle={{color: 'red'}}>Trains</IndexLink>
+							<IndexLink to="/" activeClassName="active">Trains</IndexLink>
 						</li>
 						<li>
-							<IndexLink to="/about" activeClassName="active" activeStyle={{color: 'red'}}>About</IndexLink>
+							<IndexLink to="/about" activeClassName="active">About</IndexLink>
 						</li>
 					</ul>
 				</div>

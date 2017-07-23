@@ -15,7 +15,7 @@ var TrainDetail = React.createClass({
 							<img src={"/trains/" + trainInfo.img}
 									 alt="Default avatar"
 									 title="User Avatar"
-									 className="ava2" />
+									 className="avatar" />
 						</div>
 
 					</div>

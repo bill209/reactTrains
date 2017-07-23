@@ -15,7 +15,12 @@ var TrainPic = React.createClass({
 					</div>
 				)
 			} else {
-				return <p>please click on a train</p>
+				return (
+					<div className="callout secondary large">
+						<h5>No Train Selected</h5>
+						<p>please click on a train in the train list.</p>
+					</div>
+					)
 			}
 		}
 

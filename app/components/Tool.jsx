@@ -6,10 +6,10 @@ var Tool = ({tool}) => {
 				<div className="card-divider">
 					{tool.tool}
 				</div>
-				<img src="trains/alaska.jpg"/>
+				<img src={"/logos/" + tool.logo} />
 				<div className="card-section">
-					<h4>This is a card.</h4>
-					<p>It has an easy to override visual style, and is appropriately subdued.</p>
+					<p>{tool.desc}</p>
+					<p className="summary"><a href={tool.sourceUrl}>{tool.source}</a></p>
 				</div>
 			</div>
 	);

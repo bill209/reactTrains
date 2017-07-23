@@ -80,7 +80,7 @@ var Trains = React.createClass({
 
 		return (
 			// if(typeof this.state.trainList.trains !== 'undefined'){
-			<div className="grid-x grid-margin-x small-up-2">
+			<div className="trains grid-x grid-margin-x small-up-2">
 				<div className="cell">
 					<div className="callout secondary large">
 

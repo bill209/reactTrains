@@ -30,15 +30,13 @@ var About = React.createClass({
 		var {toolList} = this.state;
 
 		function RenderToolList(){
-			console.log("toolList-xxx",toolList);
-
 			if(typeof toolList.tools !== 'undefined'){
 				return (
-					<div className="grid-x grid-margin-x small-up-3">
+					<div className="grid-x grid-margin-x grid-padding-x small-up-2 medium-up-3 large-up-4">
 					{
 							toolList.tools.map(function(tool) {
 								return (
-									<div className="cell test">
+									<div className="cell">
 										<Tool tool={tool}/>
 									</div>
 								)
@@ -52,7 +50,19 @@ var About = React.createClass({
 		}
 
 		return (
+			<div className="about">
+
+				<div className="callout secondary">
+					<h5>React Trains</h5>
+					<p>This is a simple app that I built in order to learn the fundamentals of React. The various tools, plugins, and services used to create this app are listed below.</p>
+					<ul>
+						<li>Github repo: <a href="https://github.com/bill209/reactTrains">github.com/bill209/reactTrains</a></li>
+						<li>Heroku demo: <a href="http://reacttrains.herokuapp.com/">herokuapp.com/</a></li>
+					</ul>
+				</div>
+
 				<RenderToolList />
+			</div>
 		);
 	}
 });
