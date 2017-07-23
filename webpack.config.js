@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = {
 	entry: [
 		'script!jquery/dist/jquery.min.js',
-		'script!foundation-sites/dist/foundation.min.js',
+		'script!foundation-sites/dist/js/foundation.min.js',
 		'./app/app.jsx'
 		],
 	externals: {
@@ -29,9 +29,10 @@ module.exports = {
 			TrainList: 'app/components/TrainList.jsx',
 			TrainDetail: 'app/components/TrainDetail.jsx',
 			TrainPic: 'app/components/TrainPic.jsx',
-			trainsSvc: 'app/api/trainsSvc.jsx',
+			dataSvc: 'app/api/dataSvc.jsx',
 			ErrorModal: 'app/components/ErrorModal.jsx',
 			trainData: 'app/api/trainData.jsx',
+			toolData: 'app/api/toolData.jsx',
 			appStyles: 'app/styles/main.css'
 		},
 		extensions: ['', '.js', '.jsx']

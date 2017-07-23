@@ -1,7 +1,7 @@
 var React = require('react');
 var TrainList = require('TrainList');
 var TrainPic = require('TrainPic');
-var trainsSvc = require('trainsSvc');
+var dataSvc = require('dataSvc');
 var ErrorModal = require('ErrorModal');
 
 var Trains = React.createClass({
@@ -29,7 +29,7 @@ var Trains = React.createClass({
 			errorMsg: undefined
 		});
 
-		trainsSvc.getTrains().then(function (res) {
+		dataSvc.getTrains().then(function (res) {
 			that.setState({
 				trainList: res,
 				isLoading: false,
@@ -79,8 +79,8 @@ var Trains = React.createClass({
 
 		return (
 			// if(typeof this.state.trainList.trains !== 'undefined'){
-			<div className="row">
-				<div className="small-6 columns">
+			<div className="grid-x grid-margin-x small-up-2">
+				<div className="cell">
 					<div className="callout secondary large">
 
 						<RenderTrainList />
@@ -89,7 +89,8 @@ var Trains = React.createClass({
 
 					</div>
 				</div>
-				<div className="small-6 columns">
+
+				<div className="cell">
 					<TrainPic trainList={trainList} trainIdx={chosenTrain}/>
 				</div>
 				<form onSubmit={this.onFormSubmit}>

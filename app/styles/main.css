@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+.npm-font {
+	font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+}
+
+.cell.test {
+	margin-bottom: 30px;
+}
+
 .avatar-container {
 	display: block;
 	margin-bottom: 7px;

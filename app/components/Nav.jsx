@@ -14,15 +14,20 @@ var Nav = React.createClass({
 				<div className="top-bar-left">
 					<ul className="menu">
 						<li className="menu-text">
+							<Link to="/">
 							Common Carrier Freight Railroads in the United States<br/>
 							a small sampling...
+							</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="top-bar-right">
 					<ul className="menu">
 						<li>
-							<Link to="/about" activeClassName="active" activeStyle={{color: 'red'}}>About</Link>
+							<IndexLink to="/" activeClassName="active" activeStyle={{color: 'red'}}>Trains</IndexLink>
+						</li>
+						<li>
+							<IndexLink to="/about" activeClassName="active" activeStyle={{color: 'red'}}>About</IndexLink>
 						</li>
 					</ul>
 				</div>

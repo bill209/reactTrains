@@ -7,7 +7,7 @@ var About = require('About');
 var Nav = require('Nav');
 
 // load Foundation
-require('style!css!foundation-sites/dist/foundation.min.css');
+require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
 // load css
