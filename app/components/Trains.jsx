@@ -29,18 +29,19 @@ var Trains = React.createClass({
 			errorMsg: undefined
 		});
 
-		dataSvc.getTrains().then(function (res) {
-			that.setState({
-				trainList: res,
-				isLoading: false,
+		dataSvc.getTrains()
+			.then(function (res) {
+				that.setState({
+					trainList: res,
+					isLoading: false,
+				})
+			}, function (e) {
+				that.setState({
+					isLoading: false,
+					trainError: true,
+					errorMsg: e.message
+				})
 			})
-		}, function (e) {
-			that.setState({
-				isLoading: false,
-				trainError: true,
-				errorMsg: e.message
-			})
-		})
 	},
 
 	handleClick: function (idx) {

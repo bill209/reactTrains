@@ -29,6 +29,7 @@ module.exports = {
 			TrainList: 'app/components/TrainList.jsx',
 			TrainDetail: 'app/components/TrainDetail.jsx',
 			TrainPic: 'app/components/TrainPic.jsx',
+			Tool: 'app/components/Tool.jsx',
 			dataSvc: 'app/api/dataSvc.jsx',
 			ErrorModal: 'app/components/ErrorModal.jsx',
 			trainData: 'app/api/trainData.jsx',
