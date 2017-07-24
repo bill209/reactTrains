@@ -4,6 +4,20 @@ a.active {
 	color: rebeccapurple;
 }
 
+.top-bar .menu-text {
+	padding-top: 0;
+}
+
+.top-bar .menu-text a {
+	color: #333;
+}
+
+.top-bar .menu-text .subtitle {
+	font-style: italic;
+	font-size: 10px;
+	float: right;
+}
+
 .trains.grid-x {
 	margin: 20px;
 }

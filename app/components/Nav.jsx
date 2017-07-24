@@ -16,7 +16,7 @@ var Nav = React.createClass({
 						<li className="menu-text">
 							<Link to="/">
 							Common Carrier Freight Railroads in the United States<br/>
-							a small sampling...
+							<span className="subtitle">a small sampling...</span>
 							</Link>
 						</li>
 					</ul>
