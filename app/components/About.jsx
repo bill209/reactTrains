@@ -1,13 +1,16 @@
 var React = require('react');
-var {Link} = require('react-router');
-var Tool = require('Tool');
 var dataSvc = require('dataSvc');
+var Tool = require('Tool');
+var ErrorModal = require('ErrorModal');
 
 var About = React.createClass({
 
 	getInitialState: function () {
 		return {
-			toolList: {}
+			toolList: {},
+			isLoading: false,
+			toolError: false,
+			errorMsg: undefined
 		}
 	},
 	componentDidMount: function () {
@@ -15,27 +18,43 @@ var About = React.createClass({
 	},
 	getTools: function(){
 		let that = this;
+		this.setState({
+			isLoading: true,
+			toolError: false,
+			errorMsg: undefined
+		})
 
 		dataSvc.getTools()
 			.then(function (res) {
 				that.setState({
-					toolList: res
+					toolList: res,
+					isLoading: false
 				})
 			}, function (e) {
-				console.log('error', e);
+				that.setState({
+					isLoading: false,
+					toolError: true,
+					errorMsg: e.message
+				},
+					that.setState({
+						isLoading: false,
+						toolError: true,
+						errorMsg: e.message
+					})
+				)
 			})
 	},
 	render: function () {
-		var {toolList} = this.state;
+		var {isLoading, toolList, toolError, errorMsg} = this.state;
 
 		function RenderToolList(){
 			if(typeof toolList.tools !== 'undefined'){
 				return (
 					<div className="grid-x grid-margin-x grid-padding-x small-up-2 medium-up-3 large-up-4">
 					{
-							toolList.tools.map(function(tool) {
+							toolList.tools.map(function(tool, i) {
 								return (
-									<div className="cell">
+									<div key={i} className="cell">
 										<Tool tool={tool}/>
 									</div>
 								)
@@ -45,6 +64,20 @@ var About = React.createClass({
 				)
 			} else {
 				return <p>rocks, paper, scissors.</p>
+			}
+		}
+
+		function RenderError(){
+			if(toolError){
+				return(
+					<ErrorModal msg={errorMsg} title="nuts..."/>
+				)
+			}
+		}
+
+		function RenderLoader() {
+			if (isLoading) {
+				return <p className="text-center">fetching tools ...</p>
 			}
 		}
 
@@ -61,6 +94,8 @@ var About = React.createClass({
 				</div>
 
 				<RenderToolList />
+				{RenderLoader()}
+				{RenderError()}
 			</div>
 		);
 	}

@@ -2,19 +2,24 @@ var axios = require('axios');
 var trainData = require('trainData');
 var toolData = require('toolData');
 
-const OPEN_WX_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?units=imperial';
-
 module.exports = {
 
-	getTrains: function(){
-		return new Promise(function(resolve, reject){
-			resolve(trainData());
+	getTrains: function () {
+		return new Promise(function (resolve, reject) {
+			if (trainData() !== null) {
+				resolve(trainData());
+			} else {
+				reject({message: 'unable to fetch choo-choos'});
+			}
 		})
 	},
-	getTools: function(){
-		return new Promise(function(resolve, reject){
-			resolve(toolData());
+	getTools: function () {
+		return new Promise(function (resolve, reject) {
+			if (trainData() !== null) {
+				resolve(toolData());
+			} else {
+				reject({message: 'no tools found'});
+			}
 		})
 	}
-
-}
+};

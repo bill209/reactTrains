@@ -54,20 +54,6 @@ var Trains = React.createClass({
 		var that = this;
 		var {isLoading, trainList, chosenTrain, trainError, errorMsg} = this.state;
 
-		function renderMessage() {
-			if (isLoading) {
-				return <p className="text-center">fetching trains ...</p>
-			}
-		}
-
-		function renderError() {
-			if (trainError) {
-				return (
-					<ErrorModal msg={errorMsg} title="crazy!"/>
-				)
-			}
-		}
-
 		function RenderTrainList() {
 
 			if (typeof trainList.trains !== 'undefined') {
@@ -78,15 +64,29 @@ var Trains = React.createClass({
 			}
 		}
 
+		function RenderError(){
+			if(trainError){
+				return(
+					<ErrorModal msg={errorMsg} title="crazy!"/>
+				)
+			}
+		}
+
+		function RenderLoader() {
+			if (isLoading) {
+				return <p className="text-center">fetching trains ...</p>
+			}
+		}
+
 		return (
 			// if(typeof this.state.trainList.trains !== 'undefined'){
-			<div className="trains grid-x grid-margin-x small-up-2">
+			<div className="trains grid-x grid-margin-x small-up-1 medium-up-2">
 				<div className="cell">
 					<div className="callout secondary large">
 
 						<RenderTrainList />
-						{renderMessage()}
-						{renderError()}
+						{RenderLoader()}
+						{RenderError()}
 
 					</div>
 				</div>
