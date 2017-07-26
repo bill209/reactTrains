@@ -35,13 +35,7 @@ var About = React.createClass({
 					isLoading: false,
 					toolError: true,
 					errorMsg: e.message
-				},
-					that.setState({
-						isLoading: false,
-						toolError: true,
-						errorMsg: e.message
-					})
-				)
+				})
 			})
 	},
 	render: function () {

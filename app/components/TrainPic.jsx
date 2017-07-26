@@ -8,7 +8,7 @@ var TrainPic = React.createClass({
 			if (trainIdx !== null) {
 				return (
 					<div className="callout secondary large">
-						<img src={"/trains/" + trainList.trains[trainIdx].img}
+						<img src={"/trains/" + trainList.railroads[trainIdx].img}
 								 alt="Default"
 								 title=""
 								 className="" />

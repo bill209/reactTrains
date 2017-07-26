@@ -29,7 +29,7 @@ var Trains = React.createClass({
 			errorMsg: undefined
 		});
 
-		dataSvc.getTrains()
+		dataSvc.getRailroads()
 			.then(function (res) {
 				that.setState({
 					trainList: res,
@@ -56,11 +56,11 @@ var Trains = React.createClass({
 
 		function RenderTrainList() {
 
-			if (typeof trainList.trains !== 'undefined') {
+			if (typeof trainList.railroads !== 'undefined') {
 				return <TrainList onTrainClick={that.handleClick}
-													trainList={trainList.trains}/>
+													trainList={trainList.railroads}/>
 			} else {
-				return <p>no trains yet...</p>
+				return <p>no railroads yet...</p>
 			}
 		}
 
