@@ -31,11 +31,16 @@ var Trains = React.createClass({
 
 		dataSvc.getRailroads()
 			.then(function (res) {
+				console.log("success",res);
+
 				that.setState({
 					trainList: res,
 					isLoading: false,
 				})
-			}, function (e) {
+			})
+			.catch(function (e) {
+				console.log("failure - finally",e);
+				
 				that.setState({
 					isLoading: false,
 					trainError: true,
