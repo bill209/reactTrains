@@ -11,7 +11,7 @@ module.exports = {
 				return res.data
 			}, function (err) {
 				console.log("err", err);
-				throw new Error('xxx: ', err);
+				throw new Error('no data found: ', err);
 			});
 	},
 	getTrains: function () {
