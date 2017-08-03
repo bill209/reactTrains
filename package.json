@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "docs": "gulp gulp_react_docs.js"
   },
   "author": "bill rowland",
   "license": "ISC",
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.11.2",
     "foundation-sites": "6.4.0",
+    "gulp": "^3.9.1",
     "in": "^0.11.0",
     "jquery": "^2.2.1",
     "project": "^0.1.6",

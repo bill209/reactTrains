@@ -16,10 +16,6 @@ var Trains = React.createClass({
 			trainError: false
 		}
 	},
-	onFormSubmit: function (e) {
-		e.preventDefault();
-		this.getTrainList();
-	},
 	getTrainList: function () {
 		let that = this;
 
@@ -35,7 +31,8 @@ var Trains = React.createClass({
 					trainList: res,
 					isLoading: false,
 				})
-			}, function (e) {
+			})
+			.catch(function (e) {
 				that.setState({
 					isLoading: false,
 					trainError: true,

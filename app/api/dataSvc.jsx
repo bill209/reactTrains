@@ -1,45 +1,32 @@
 var axios = require('axios');
-var trainData = require('trainData');
-var toolData = require('toolData');
+
+let url = '';
+
+if (false) {
+	url = 'http://localhost:8080';
+} else {
+	url = 'http://sillyserver.herokuapp.com';
+}
 
 module.exports = {
-
 	getRailroads: function () {
-		return axios.get('http://localhost:8080/api/railroads')
+		console.log('STARTING_5');
+		return axios.get(url + '/api/railroads')
 			.then(function (res) {
-				console.log("res.data", res.data);
+				console.log("dataSvc - success: ",res);
 				return res.data
-			}, function (err) {
-				console.log("err", err);
-				throw new Error('no data found: ', err);
+			}).catch(function (err) {
+				console.log("dataSvc - failure: ",err);
+				return err;
 			});
-	},
-	getTrains: function () {
-		return new Promise(function (resolve, reject) {
-			if (trainData() !== null) {
-				resolve(trainData());
-			} else {
-				reject({message: 'unable to fetch choo-choos'});
-			}
-		})
 	},
 	getTools: function () {
-		return axios.get('http://localhost:8080/api/tools')
+		return axios.get(url + '/api/tools')
 			.then(function (res) {
-				console.log("res", res);
 				return res.data
 			}, function (err) {
-				console.log("err", err);
 				throw new Error('xxx: ', err);
 			});
-	},
-	getTools_old: function () {
-		return new Promise(function (resolve, reject) {
-			if (toolData() !== null) {
-				resolve(toolData());
-			} else {
-				reject({message: 'no tools found'});
-			}
-		})
 	}
-};
+}
+;

@@ -13,6 +13,7 @@ app.use(function (req, res, next){
 	}
 });
 
+app.use(express.static('docs'));
 app.use(express.static('public'));
 app.use(express.static('app/assets/'));
 
