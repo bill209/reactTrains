@@ -16,10 +16,6 @@ var Trains = React.createClass({
 			trainError: false
 		}
 	},
-	onFormSubmit: function (e) {
-		e.preventDefault();
-		this.getTrainList();
-	},
 	getTrainList: function () {
 		let that = this;
 
@@ -31,16 +27,12 @@ var Trains = React.createClass({
 
 		dataSvc.getRailroads()
 			.then(function (res) {
-				console.log("success",res);
-
 				that.setState({
 					trainList: res,
 					isLoading: false,
 				})
 			})
 			.catch(function (e) {
-				console.log("failure - finally",e);
-				
 				that.setState({
 					isLoading: false,
 					trainError: true,
