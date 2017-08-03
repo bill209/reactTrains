@@ -10,7 +10,6 @@ if (false) {
 
 module.exports = {
 	getRailroads: function () {
-		console.log('STARTING_5');
 		return axios.get(url + '/api/railroads')
 			.then(function (res) {
 				console.log("dataSvc - success: ",res);
